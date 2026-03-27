@@ -1,3 +1,21 @@
+#!/bin/bash
+
+# Build the Next.js application
+echo "Building Next.js application..."
+npm run build
+
+# Export the static site
+echo "Exporting static site..."
+npm run export
+
+# Create .nojekyll file for GitHub Pages
+echo "Creating .nojekyll file..."
+touch out/.nojekyll
+
+# Copy the redirect index.html to the root if it doesn't exist
+if [ ! -f index.html ]; then
+    echo "Creating root redirect..."
+    cat > index.html << 'EOF'
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,18 +70,30 @@
             <span>✨</span>
             GiftGenie AI
         </div>
-        <p>Redirecting to the main application...</p>
+        <p>Deploying your application...</p>
         <div class="spinner"></div>
         <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
-            If you're not redirected automatically, <a href="/" style="color: #ffd8ea; text-decoration: underline;">click here</a>.
+            If you're not redirected automatically, <a href="/genie-gift/" style="color: #ffd8ea; text-decoration: underline;">click here</a>.
         </p>
     </div>
     
     <script>
-        // Redirect to the main Next.js app
         setTimeout(function() {
-            window.location.href = '/';
+            window.location.href = '/genie-gift/';
         }, 1000);
     </script>
 </body>
 </html>
+EOF
+fi
+
+echo "Build and export completed!"
+echo "Files are ready in the 'out' directory for GitHub Pages deployment."
+echo ""
+echo "To deploy manually:"
+echo "1. Go to your GitHub repository settings"
+echo "2. Under 'Pages', set source to 'Deploy from a branch'"
+echo "3. Select 'gh-pages' branch"
+echo "4. Push the 'out' directory to the 'gh-pages' branch"
+echo ""
+echo "Or run: git subtree push --prefix out origin gh-pages"

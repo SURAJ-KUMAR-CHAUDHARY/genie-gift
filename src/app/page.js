@@ -180,7 +180,7 @@ export default function Home() {
               <p className="text-on-surface-variant text-xs line-clamp-2">Timeless design for someone who values precision and style.</p>
               <div className="flex items-center justify-between pt-2">
                 <span className="text-primary font-bold text-lg">₹1,299</span>
-                <AddToCartButton productId="prod_1" productName="The Horizon Watch" price={1299} />
+                <AddToCartButton productName="The Horizon Watch" price={1299} />
               </div>
             </div>
           </div>
@@ -193,7 +193,7 @@ export default function Home() {
               <p className="text-on-surface-variant text-xs line-clamp-2">Hand-poured soy wax with notes of sandalwood and sea salt.</p>
               <div className="flex items-center justify-between pt-2">
                 <span className="text-primary font-bold text-lg">₹849</span>
-                <AddToCartButton productId="prod_2" productName="Zen Ceramic Candle" price={849} />
+                <AddToCartButton productName="Zen Ceramic Candle" price={849} />
               </div>
             </div>
           </div>
