@@ -65,6 +65,17 @@ The repository includes a GitHub Actions workflow that automatically deploys you
      - `VERCEL_PROJECT_ID`: Your Vercel project ID
      - `VERCEL_TOKEN`: Your Vercel deployment token
 
+3. **Add environment variables to Vercel:**
+   - Go to your Vercel project settings
+   - Navigate to "Environment Variables"
+   - Add these variables:
+     - `NEXTAUTH_URL`: Your production URL (e.g., https://your-project.vercel.app)
+     - `NEXTAUTH_SECRET`: Generate with `openssl rand -base64 32`
+     - `GEMINI_API_KEY`: Your Google Gemini API key
+     - `STRIPE_SECRET_KEY`: Your Stripe secret key (optional, but required for payments)
+     - `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`: Your Stripe publishable key (optional)
+     - `DATABASE_URL`: Your production database URL (e.g., PostgreSQL from Railway, Supabase, etc.)
+
 3. **Push to deploy:**
 ```bash
 git add .
