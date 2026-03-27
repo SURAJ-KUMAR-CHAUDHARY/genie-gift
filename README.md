@@ -46,43 +46,64 @@ npm run dev
 
 2. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Deployment to GitHub Pages
+## Deployment to Vercel (Recommended)
 
 ### Option 1: Automatic Deployment (Recommended)
 
-The repository includes a GitHub Actions workflow that automatically deploys your app to GitHub Pages when you push to the main branch.
+The repository includes a GitHub Actions workflow that automatically deploys your app to Vercel when you push to the main branch.
 
-1. Ensure your GitHub Pages is set to deploy from the `gh-pages` branch
-2. Push your changes to the main branch:
+1. **Set up Vercel project:**
+   - Go to [Vercel](https://vercel.com/) and create an account
+   - Import your GitHub repository
+   - Connect your project to Vercel
+
+2. **Add environment variables to GitHub Secrets:**
+   - Go to your GitHub repository settings
+   - Navigate to "Secrets and variables" > "Actions"
+   - Add these secrets:
+     - `VERCEL_ORG_ID`: Your Vercel organization ID
+     - `VERCEL_PROJECT_ID`: Your Vercel project ID
+     - `VERCEL_TOKEN`: Your Vercel deployment token
+
+3. **Push to deploy:**
 ```bash
 git add .
-git commit -m "Deploy to GitHub Pages"
+git commit -m "Deploy to Vercel"
 git push origin main
 ```
 
-3. The workflow will automatically:
+4. The workflow will automatically:
    - Build your Next.js application
-   - Export it as a static site
-   - Deploy to GitHub Pages
+   - Deploy to Vercel
+   - Provide you with a live URL
 
-### Option 2: Manual Deployment
+### Option 2: Manual Deployment to Vercel
 
-1. Build and export your application:
+1. **Install Vercel CLI:**
 ```bash
-npm run build
-npm run export
+npm install -g vercel
 ```
 
-2. Deploy to GitHub Pages:
+2. **Deploy manually:**
 ```bash
-git subtree push --prefix out origin gh-pages
+vercel
 ```
 
-3. Or manually:
-   - Go to your GitHub repository settings
-   - Under 'Pages', set source to 'Deploy from a branch'
-   - Select 'gh-pages' branch
-   - Push the 'out' directory to the 'gh-pages' branch
+3. **Deploy to production:**
+```bash
+vercel --prod
+```
+
+### Option 3: GitHub Pages (Limited Functionality)
+
+**Note:** GitHub Pages doesn't support Next.js API routes, so this option will not work with the current application structure that includes authentication, database operations, and AI features.
+
+If you still want to use GitHub Pages, you would need to:
+1. Remove all API routes
+2. Use a backend service (like Supabase, Firebase, or a separate API)
+3. Update the application to work with external APIs
+
+This is not recommended for the current application architecture.
 
 ## Features
 

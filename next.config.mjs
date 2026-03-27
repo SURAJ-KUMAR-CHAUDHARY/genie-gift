@@ -1,21 +1,20 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   /* config options here */
-  // GitHub Pages configuration
-  basePath: '',
-  trailingSlash: false,
-  output: 'export', // Enable static export for GitHub Pages
+  // Vercel deployment configuration (recommended for Next.js with API routes)
   images: {
-    unoptimized: true, // Disable image optimization for GitHub Pages
-  },
-  // Handle API routes for static export
-  async rewrites() {
-    return [
+    remotePatterns: [
       {
-        source: '/api/:path*',
-        destination: '/api/:path*',
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+        port: '',
+        pathname: '/aida-public/**',
       },
-    ];
+    ],
+  },
+  // Enable experimental features for better deployment
+  experimental: {
+    optimizeCss: true,
   },
 };
 
