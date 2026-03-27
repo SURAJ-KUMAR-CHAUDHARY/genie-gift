@@ -1,0 +1,24 @@
+{
+  "name": "projects/2529881439854146086",
+  "projectId": "2529881439854146086",
+  "title": "GiftGenie AI",
+  "visibility": "PRIVATE",
+  "projectType": "PROJECT_DESIGN",
+  "origin": "STITCH",
+  "deviceType": "MOBILE",
+  "designTheme": {
+    "colorMode": "LIGHT",
+    "font": "PLUS_JAKARTA_SANS",
+    "roundness": "ROUND_FULL",
+    "customColor": "#7C3AED"
+  },
+  "screens": {
+    "landing": { "page": "index.html" },
+    "discover": { "page": "discover.html" },
+    "results": { "page": "results.html" },
+    "product": { "page": "product.html" },
+    "cart": { "page": "cart.html" },
+    "dashboard": { "page": "dashboard.html" },
+    "login": { "page": "login.html" }
+  }
+}

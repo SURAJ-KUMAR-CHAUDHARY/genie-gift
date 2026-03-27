@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Your Cart — GiftGenie AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, .headline {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .ethereal-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        /* Custom scrollbar for premium feel */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #fcf8ff; }
+        ::-webkit-scrollbar-thumb { background: #ccc3d8; border-radius: 10px; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "on-secondary-container": "#684000",
+                "surface-variant": "#e5e1e8",
+                "surface-tint": "#732ee4",
+                "inverse-surface": "#313035",
+                "tertiary-fixed-dim": "#e2bcce",
+                "on-secondary-fixed-variant": "#653e00",
+                "primary-container": "#7c3aed",
+                "on-surface-variant": "#4a4455",
+                "on-error-container": "#93000a",
+                "secondary-fixed-dim": "#ffb95e",
+                "tertiary-fixed": "#ffd8ea",
+                "on-secondary-fixed": "#2a1700",
+                "on-tertiary-fixed-variant": "#5a3f4d",
+                "secondary": "#855400",
+                "secondary-container": "#fea619",
+                "surface-container-highest": "#e5e1e8",
+                "on-secondary": "#ffffff",
+                "inverse-on-surface": "#f3eff6",
+                "secondary-fixed": "#ffddb7",
+                "on-primary-container": "#ede0ff",
+                "primary-fixed-dim": "#d2bbff",
+                "on-surface": "#1c1b20",
+                "outline": "#7b7487",
+                "tertiary": "#624655",
+                "on-background": "#1c1b20",
+                "surface-container-high": "#eae7ee",
+                "error-container": "#ffdad6",
+                "outline-variant": "#ccc3d8",
+                "surface-bright": "#fcf8ff",
+                "on-tertiary-container": "#ffdcec",
+                "inverse-primary": "#d2bbff",
+                "surface-dim": "#dcd9df",
+                "on-primary": "#ffffff",
+                "on-error": "#ffffff",
+                "on-primary-fixed": "#25005a",
+                "primary-fixed": "#eaddff",
+                "primary": "#630ed4",
+                "surface-container-lowest": "#ffffff",
+                "on-tertiary-fixed": "#2b1421",
+                "surface-container": "#f0ecf3",
+                "on-tertiary": "#ffffff",
+                "error": "#ba1a1a",
+                "on-primary-fixed-variant": "#5a00c6",
+                "background": "#fcf8ff",
+                "surface": "#fcf8ff",
+                "surface-container-low": "#f6f2f9",
+                "tertiary-container": "#7c5e6d"
+              },
+              fontFamily: {
+                "headline": ["Plus Jakarta Sans"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+            },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-[#fcf8ff]/70 dark:bg-[#1c1b20]/70 backdrop-blur-xl bg-gradient-to-b from-[#f6f2f9] to-transparent">
+<nav class="flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-surface-container hover:opacity-80 transition-opacity scale-95 active:scale-90 duration-200">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="font-['Plus_Jakarta_Sans'] text-2xl font-bold tracking-tight text-[#7C3AED]">Your Cart 🛒 (3)</h1>
+</div>
+<button class="font-['Plus_Jakarta_Sans'] text-sm font-bold tracking-wide text-[#7C3AED] hover:opacity-80 transition-opacity active:scale-95 duration-200">
+                Clear All
+            </button>
+</nav>
+</header>
+<main class="pt-24 px-6 max-w-2xl mx-auto space-y-6">
+<!-- Bundle Card -->
+<section class="relative bg-surface-container-lowest rounded-lg p-6 shadow-[0_12px_40px_-4px_rgba(28,27,32,0.05)] overflow-hidden">
+<!-- Signature Accent Top Line (Not a border) -->
+<div class="absolute top-0 left-0 w-full h-1 bg-secondary-container"></div>
+<div class="flex justify-between items-start mb-6">
+<div>
+<span class="inline-block px-3 py-1 bg-secondary-container/10 text-on-secondary-container text-xs font-bold rounded-full mb-2">LIMITED OFFER</span>
+<h2 class="headline text-lg font-bold text-on-surface">🎀 Art Lover's Bundle — Save ₹300!</h2>
+</div>
+<button class="text-outline hover:text-error transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Bundle Items List -->
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<img class="w-[60px] h-[60px] rounded-lg object-cover" data-alt="Close-up of vibrant professional acrylic paint tubes and artist brushes on a clean white textured background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD13Uv9UJgIrCVnRZPkaOYp__TsOqcuIW7BNh_W-DGfvCI-La1VtHDrCe4NiDOLGuOU-pp2534XSu6L-GDsSytSm670VTaVnnhG1qJcq_WFgHJkj2nMfYqHbPG261ENu-BUz6UZsxWInffrMd2deeY26BGj3iIPWN4ORvKSOD3yvSI-CzRs47K2rCdiotPADff_bcvLTta1kSL-_mV3fgeYQSa6kINGiyLK95hdE_7WyuQfIqDtIgJFHGU2mQVkf8e-ayqZ-wLjX_I"/>
+<div class="flex-1">
+<p class="text-sm font-semibold text-on-surface">Premium Acrylic Set</p>
+<p class="text-xs text-tertiary">12 Professional Grades</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<img class="w-[60px] h-[60px] rounded-lg object-cover" data-alt="Minimalist architectural sketchpad with heavy grain paper and a sleek charcoal pencil resting on top" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9Qon57_leblMiE6N_AAC5cCxNfzNFABmeygm_3Dwa0t-atMno2jWgsEahENJTSaj67jK7ShuseS_82AIOEP63Rz6EFo4NSNGVYg4IMDMv4ULP2-YReZluEND4iFr1VCOBom8DF4woF6QiX11jExe2dP9liQIuIMfob0rUaxPTMuDL3WbeKNHlkOi8YmM-syuIC1XNR2UHCA1MmTY2jBBWdYbL-QTqFgWxu7zWlJR14KLhQ8CrYSDn4hP1TO9Ga87WxoIZfGzNNY0"/>
+<div class="flex-1">
+<p class="text-sm font-semibold text-on-surface">Hardbound Sketchbook</p>
+<p class="text-xs text-tertiary">A4, 180 GSM Acid-Free</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<img class="w-[60px] h-[60px] rounded-lg object-cover" data-alt="Macro shot of assorted fine-liner drawing pens in varied thicknesses on an artist's workspace" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASHfl41kbjOFCa8dwd69ShAaRjwZIrD7vkF2GpfoAE5w3jnbomQw-Qy5BIr70rGeRRr0I9jhTl-Bpd8_4wg8xEq4IiznABEWdDdp18_mlArBs_qWtAkdM4zIOlCH7lGtLo4-kmuEE-koYfuwxFQyTOqswu8S4BZ6JujKz-sgGQd_355IfefMn2b4XImSNUk2TUHr_p8xWZSpz24-iwUp3dhG5gwxcXH_06Lra7fJBO6Zuo6h5HROShxYOeH4K40aDidfGKDQe_Yq4"/>
+<div class="flex-1">
+<p class="text-sm font-semibold text-on-surface">Detailing Fineliners</p>
+<p class="text-xs text-tertiary">Set of 6 waterproof pens</p>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-6 border-t border-surface-variant/30 flex justify-between items-end">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-3 bg-surface-container px-3 py-2 rounded-full w-fit">
+<button class="w-6 h-6 flex items-center justify-center text-primary font-bold active:scale-90 transition-transform">-</button>
+<span class="text-sm font-bold text-on-surface">1</span>
+<button class="w-6 h-6 flex items-center justify-center text-primary font-bold active:scale-90 transition-transform">+</button>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm text-outline line-through">₹2,199</p>
+<p class="headline text-xl font-bold text-primary">₹1,899</p>
+</div>
+</div>
+</section>
+<!-- Individual Item Card -->
+<section class="bg-surface-container-lowest rounded-lg p-6 shadow-[0_12px_40px_-4px_rgba(28,27,32,0.05)] flex gap-4">
+<img class="w-[80px] h-[80px] rounded-lg object-cover" data-alt="Luxury minimalist scented candle in a frosted glass jar with warm golden flame and soft bokeh background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvUPSWfT26-VEsWkaVUOwX-rUAit2UEENwaGRmZ-ykFMF09xJmTEZ2ZeoxG6GDXPcS3cbTHykX1rDQ-fBquMpo0Oa2MP0sasO3yoeifmwnNqjT8YmK3iQq5YJD-a2ZIlRia9-DfqkgFmBhPKWEwA8yfB-CiDjFfUitcIvejnhNNdyxw1FGXCMUDEbdr5FVa8BumxRUmhhmkOUUjNYiWtZurHpZbUK3IZqb_G965OIQD65K-eoVFCI-iLsl0kwfbZFZ8zWXCt63VcQ"/>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-on-surface">Scented Candle Set</h3>
+<button class="text-outline hover:text-error transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<p class="text-sm text-tertiary mb-3">Lavender &amp; Sandalwood</p>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3 bg-surface-container px-3 py-1.5 rounded-full">
+<button class="text-primary font-bold">-</button>
+<span class="text-sm font-bold text-on-surface">1</span>
+<button class="text-primary font-bold">+</button>
+</div>
+<p class="headline font-bold text-primary">₹499</p>
+</div>
+</div>
+</section>
+<!-- Personalization & Extras -->
+<section class="space-y-4">
+<!-- AI Message Card -->
+<div class="bg-surface-container-low rounded-lg p-6">
+<div class="flex justify-between items-center mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">edit_note</span>
+<span class="font-bold text-on-surface">📝 Attach Personalized Message</span>
+</div>
+<!-- Toggle Switch (Mock) -->
+<div class="w-12 h-6 bg-primary rounded-full relative p-1 cursor-pointer">
+<div class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"></div>
+</div>
+</div>
+<div class="bg-white/50 p-4 rounded-lg border-l-4 border-primary-container italic text-sm text-on-surface-variant flex justify-between items-start">
+<p>"To the most amazing partner, may this art kit bring out the colors of our beautiful journey together. Happy Anniversary!"</p>
+<button class="text-primary font-bold ml-4 hover:underline">Edit</button>
+</div>
+</div>
+<!-- Gift Wrapping Pill -->
+<div class="flex justify-between items-center bg-tertiary-fixed/30 p-4 rounded-full px-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary">redeem</span>
+<span class="text-sm font-bold text-on-tertiary-fixed">🎁 Gift Wrapping (+₹99)</span>
+</div>
+<div class="w-12 h-6 bg-primary rounded-full relative p-1 cursor-pointer">
+<div class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"></div>
+</div>
+</div>
+</section>
+<!-- Delivery Guarantee -->
+<div class="text-center py-2 bg-secondary-container/10 rounded-lg">
+<p class="text-sm font-bold text-on-secondary-container">
+                📅 April 2, 2026 — Just in time for Anniversary! 💍
+            </p>
+</div>
+<!-- Order Summary -->
+<section class="bg-surface-container-lowest rounded-lg p-6 space-y-3">
+<div class="flex justify-between text-sm text-tertiary">
+<span>Subtotal</span>
+<span>₹2,398</span>
+</div>
+<div class="flex justify-between text-sm font-bold text-green-600">
+<span>Bundle Discount</span>
+<span>-₹300</span>
+</div>
+<div class="flex justify-between text-sm text-tertiary">
+<span>Wrapping</span>
+<span>+₹99</span>
+</div>
+<div class="flex justify-between text-sm font-bold text-green-600">
+<span>Delivery Free 🚚</span>
+<span>₹0</span>
+</div>
+<div class="pt-4 mt-2 border-t border-surface-variant/30 flex justify-between items-center">
+<span class="headline font-bold text-lg">Total Amount</span>
+<span class="headline font-extrabold text-3xl text-primary tracking-tight">₹2,197</span>
+</div>
+</section>
+</main>
+<!-- Bottom Action Bar -->
+<footer class="fixed bottom-0 w-full pb-8 px-6 z-50 flex justify-center w-full bg-transparent">
+<button class="flex items-center justify-center w-full bg-gradient-to-br from-[#630ed4] to-[#7c3aed] text-white rounded-full py-5 px-8 shadow-lg shadow-purple-500/20 hover:scale-[1.02] hover:brightness-110 transition-all active:scale-95">
+<span class="font-['Plus_Jakarta_Sans'] font-bold text-base tracking-wide flex items-center gap-2">
+                Proceed to Checkout — ₹2,197
+                <span class="material-symbols-outlined">arrow_forward</span>
+</span>
+</button>
+</footer>
+</body></html>

@@ -1,0 +1,313 @@
+﻿<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GiftGenie AI | Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#313035",
+                        "surface-container": "#f0ecf3",
+                        "surface": "#fcf8ff",
+                        "on-secondary-fixed": "#2a1700",
+                        "primary-container": "#7c3aed",
+                        "surface-tint": "#732ee4",
+                        "outline-variant": "#ccc3d8",
+                        "on-surface": "#1c1b20",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "tertiary-fixed": "#ffd8ea",
+                        "tertiary-fixed-dim": "#e2bcce",
+                        "on-primary-container": "#ede0ff",
+                        "on-surface-variant": "#4a4455",
+                        "inverse-primary": "#d2bbff",
+                        "on-primary-fixed-variant": "#5a00c6",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f3eff6",
+                        "on-tertiary-fixed": "#2b1421",
+                        "surface-bright": "#fcf8ff",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#dcd9df",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#ffb95e",
+                        "on-primary-fixed": "#25005a",
+                        "surface-variant": "#e5e1e8",
+                        "primary": "#630ed4",
+                        "secondary": "#855400",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e5e1e8",
+                        "surface-container-high": "#eae7ee",
+                        "error": "#ba1a1a",
+                        "tertiary": "#624655",
+                        "background": "#fcf8ff",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#684000",
+                        "tertiary-container": "#7c5e6d",
+                        "on-tertiary-container": "#ffdcec",
+                        "surface-container-low": "#f6f2f9",
+                        "outline": "#7b7487",
+                        "primary-fixed": "#eaddff",
+                        "primary-fixed-dim": "#d2bbff",
+                        "on-background": "#1c1b20",
+                        "secondary-fixed": "#ffddb7",
+                        "secondary-container": "#fea619",
+                        "on-tertiary-fixed-variant": "#5a3f4d"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcf8ff;
+            color: #1c1b20;
+        }
+        h1, h2, h3, .brand-font {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fcf8ff]/60 dark:bg-slate-950/60 backdrop-blur-xl shadow-[0_12px_32px_-4px_rgba(28,27,32,0.04)]">
+<div class="flex justify-between items-center px-6 h-16 w-full">
+<button class="text-[#7C3AED] hover:opacity-80 transition-opacity active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<div class="text-xl font-extrabold text-[#7C3AED] tracking-tight font-['Plus_Jakarta_Sans']">GiftGenie AI ✨</div>
+<div class="h-10 w-10 rounded-full overflow-hidden border-2 border-primary/10">
+<img alt="User Profile" class="h-full w-full object-cover" data-alt="portrait of a professional young man with a friendly smile, clean-cut, studio lighting with soft lavender background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABNezDmiCZQgTCfwBs2dpDKgcJtkbZ2io2UNPOoLc6Zm5yAHOf1RGGDFNUdkMQYYa4UfvXljK6Up5B6beA_Ct8YFDv44ahIK8KwykU0KfLWChex182LuaYW1_apKX9Y5JoxAvsFoZqXAFTvx-U9hOQytK-Vl9cbI7eMlJmnFWXQR_7QuGkRBcoxChHqn2gO9Ym3RfrErY_NCiE9IZhh3nDxje-sbqeMOvpLQf2zCHWXF3vG01A_R_OmUdPsJGVTlGNdGzAA2cM3ps"/>
+</div>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-2xl mx-auto space-y-8">
+<!-- Greeting Section -->
+<section class="space-y-1">
+<h1 class="text-3xl font-extrabold tracking-tight text-on-surface">Welcome back, Rahul! 👋</h1>
+<p class="text-on-surface-variant text-lg font-medium opacity-80">Ready to find the perfect gift?</p>
+</section>
+<!-- Stats Row -->
+<section class="grid grid-cols-3 gap-4">
+<div class="glass-card p-4 rounded-lg flex flex-col items-center justify-center text-center space-y-2 shadow-[0_12px_32px_-4px_rgba(28,27,32,0.04)]">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="redeem">redeem</span>
+<div>
+<div class="text-xl font-bold">12</div>
+<div class="text-[10px] uppercase tracking-wider font-bold text-on-surface-variant">Gifts Sent</div>
+</div>
+</div>
+<div class="glass-card p-4 rounded-lg flex flex-col items-center justify-center text-center space-y-2 shadow-[0_12px_32px_-4px_rgba(28,27,32,0.04)]">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="groups">groups</span>
+<div>
+<div class="text-xl font-bold">5</div>
+<div class="text-[10px] uppercase tracking-wider font-bold text-on-surface-variant">People Saved</div>
+</div>
+</div>
+<div class="glass-card p-4 rounded-lg flex flex-col items-center justify-center text-center space-y-2 shadow-[0_12px_32px_-4px_rgba(28,27,32,0.04)]">
+<span class="material-symbols-outlined text-tertiary text-3xl" data-icon="calendar_month">calendar_month</span>
+<div>
+<div class="text-xl font-bold">2</div>
+<div class="text-[10px] uppercase tracking-wider font-bold text-on-surface-variant">Upcoming</div>
+</div>
+</div>
+</section>
+<!-- Upcoming Occasions -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-xl font-bold tracking-tight flex items-center gap-2">
+                    Coming Up <span class="material-symbols-outlined text-primary text-xl" data-icon="event">event</span>
+</h2>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-lg shadow-[0_12px_32px_-4px_rgba(28,27,32,0.06)] relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary-container/10 rounded-full -mr-16 -mt-16 transition-transform group-hover:scale-110"></div>
+<div class="relative z-10 flex justify-between items-start">
+<div class="space-y-3">
+<div class="flex items-center gap-2">
+<span class="p-2 bg-secondary/10 rounded-full text-secondary">
+<span class="material-symbols-outlined text-xl" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</span>
+<div>
+<div class="font-bold text-lg">💍 Anniversary</div>
+<div class="text-sm text-on-surface-variant">April 2nd — Preeti</div>
+</div>
+</div>
+<div class="inline-block px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed text-xs font-bold rounded-full">
+                            6 days away
+                        </div>
+</div>
+<a class="text-primary font-bold text-sm flex items-center gap-1 hover:underline" href="#">
+                        Find a Gift <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Quick Actions Grid -->
+<section class="grid grid-cols-2 gap-4">
+<button class="bg-primary text-white p-6 rounded-lg shadow-xl flex flex-col items-center justify-center space-y-2 active:scale-95 transition-transform text-center">
+<span class="material-symbols-outlined text-3xl" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-bold">Find a Gift</span>
+</button>
+<button class="bg-surface-container-lowest text-on-surface p-6 rounded-lg shadow-[0_12px_32px_-4px_rgba(28,27,32,0.04)] flex flex-col items-center justify-center space-y-2 active:scale-95 transition-transform text-center">
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="person_search">person_search</span>
+<span class="font-bold">My People</span>
+</button>
+<button class="bg-surface-container-lowest text-on-surface p-6 rounded-lg shadow-[0_12px_32px_-4px_rgba(28,27,32,0.04)] flex flex-col items-center justify-center space-y-2 active:scale-95 transition-transform text-center">
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="inventory_2">inventory_2</span>
+<span class="font-bold">My Orders</span>
+</button>
+<button class="bg-surface-container-lowest text-on-surface p-6 rounded-lg shadow-[0_12px_32px_-4px_rgba(28,27,32,0.04)] flex flex-col items-center justify-center space-y-2 active:scale-95 transition-transform text-center">
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="favorite">favorite</span>
+<span class="font-bold">Wishlist</span>
+</button>
+</section>
+<!-- My People Section -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-xl font-bold tracking-tight flex items-center gap-2">
+                    Your Saved People <span class="material-symbols-outlined text-primary text-xl" data-icon="diversity_3">diversity_3</span>
+</h2>
+<a class="text-primary font-bold text-sm flex items-center gap-1" href="#">See all <span class="material-symbols-outlined text-sm" data-icon="arrow_right_alt">arrow_right_alt</span></a>
+</div>
+<div class="flex gap-4 overflow-x-auto no-scrollbar pb-4 -mx-2 px-2">
+<!-- Add Person Card -->
+<div class="flex-shrink-0 w-36 h-48 border-2 border-dashed border-outline-variant/30 rounded-lg flex flex-col items-center justify-center space-y-2 text-on-surface-variant hover:bg-surface-container-low transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-3xl" data-icon="add_circle">add_circle</span>
+<span class="text-xs font-bold uppercase tracking-wider">Add Person</span>
+</div>
+<!-- Preeti Card -->
+<div class="flex-shrink-0 w-36 h-48 bg-surface-container-lowest p-4 rounded-lg shadow-[0_12px_32px_-4px_rgba(28,27,32,0.04)] flex flex-col items-center text-center space-y-3">
+<div class="w-16 h-16 rounded-full overflow-hidden ring-4 ring-tertiary-fixed">
+<img alt="Preeti" class="h-full w-full object-cover" data-alt="cheerful young woman with long dark hair, soft natural lighting, elegant aesthetic, smiling warmly" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjl7P9ytyII_D9TuDxKkE5V5UjdUoAOgF47yyiBFh2dCrmqAjZemSh08xOKbE9BhNyThlR7L48maviH1XqM-_E3VYwefVaRB9UPyO3EdZiJsPAL10UHuNnB0ErF827a1Nf0r6sJgUI8e6P-XVSn-OmupA2QGdCeMz1hWicwyknxxPVblwlA3b8BJUCrXjR9M8w58weFwvWD9PYeww5GqRUB-zvAcuscosuYpbsDl7FXpDmNfESr_KxSknmOmOtlfQ55aVJjpsGIrk"/>
+</div>
+<div>
+<div class="font-bold text-sm">Preeti</div>
+<div class="text-[10px] text-primary-container font-semibold">Girlfriend 💕</div>
+</div>
+<div class="text-[9px] text-on-surface-variant font-medium">Last: Feb 14</div>
+</div>
+<!-- Mom Card -->
+<div class="flex-shrink-0 w-36 h-48 bg-surface-container-lowest p-4 rounded-lg shadow-[0_12px_32px_-4px_rgba(28,27,32,0.04)] flex flex-col items-center text-center space-y-3">
+<div class="w-16 h-16 rounded-full overflow-hidden ring-4 ring-primary-fixed">
+<img alt="Mom" class="h-full w-full object-cover" data-alt="sophisticated middle aged woman with gentle features, warm lighting, serene garden background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNL-qEmEpmNNj53xfpX_2n6RaaTXKkbQea7BwOLIVztBpald2_8t67w5pQGR-3deTbP9_BeHo58RQyhZFhG-ZUw5p_B-Rdr3Qq21YB0dpyoOfWYgBKR74mnkdg4IcdGXmr0NSfC7yJG5SnqiKmjoU3ClZ6Oyu17PAno28fVfr3F4rY5s79-QM-Mz6tX0bX_J0QLpJKne0id0YDH0X1LcnU-5O4waHQFRET42tb2aXqlV47ZAH0Rzk5m_FhgoBXdFN-AW0BD8s2xmA"/>
+</div>
+<div>
+<div class="font-bold text-sm">Mom</div>
+<div class="text-[10px] text-primary-container font-semibold">Mother 🏠</div>
+</div>
+<div class="text-[9px] text-on-surface-variant font-medium">Last: Dec 25</div>
+</div>
+<!-- Arjun Card -->
+<div class="flex-shrink-0 w-36 h-48 bg-surface-container-lowest p-4 rounded-lg shadow-[0_12px_32px_-4px_rgba(28,27,32,0.04)] flex flex-col items-center text-center space-y-3">
+<div class="w-16 h-16 rounded-full overflow-hidden ring-4 ring-secondary-fixed">
+<img alt="Arjun" class="h-full w-full object-cover" data-alt="young man with beard and glasses, modern casual look, bright soft lighting, plain background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG7MAgkogI-UaWRVMWP-4gF472VygksMvnWisU-2S6szEfVMRTU979494N0EorIv-5iK5ZQgUMdZmIiHG5MZzubxpZZGGReIDQMSTfcD79JszpwVrpN_ZTncbGsY7DH697d2vgAkNHH6vZRHA_9xn3uN2rf9RvGroRmQG6I0kv0PFvayyHbOqxu6bJyVY7X0V0yrYOBrCwZLy0lHoNKIyh4su-8yDxm23g5EbJyH-stpMlW2yQnVNHb3clz_5NrItQGnUm5UXqZDU"/>
+</div>
+<div>
+<div class="font-bold text-sm">Arjun</div>
+<div class="text-[10px] text-primary-container font-semibold">Best Friend 🍺</div>
+</div>
+<div class="text-[9px] text-on-surface-variant font-medium">Last: Jan 12</div>
+</div>
+</div>
+</section>
+<!-- Recent Searches -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h2 class="text-xl font-bold tracking-tight flex items-center gap-2">
+                    Recent Searches <span class="material-symbols-outlined text-primary text-xl" data-icon="search_insights">search_insights</span>
+</h2>
+</div>
+<div class="space-y-3">
+<!-- Search Item 1 -->
+<div class="bg-surface-container-low p-4 rounded-lg flex items-center justify-between group">
+<div class="flex items-center gap-3">
+<div class="p-3 bg-surface-container-lowest rounded-full text-primary">
+<span class="material-symbols-outlined" data-icon="brush">brush</span>
+</div>
+<div>
+<div class="font-bold text-sm">Art gift for Preeti</div>
+<div class="text-xs text-on-surface-variant">₹2000 • Anniversary • Mar 24</div>
+</div>
+</div>
+<button class="bg-primary text-white text-xs font-bold px-4 py-2 rounded-full active:scale-95 transition-transform flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="refresh">refresh</span> Re-run
+                    </button>
+</div>
+<!-- Search Item 2 -->
+<div class="bg-surface-container-low p-4 rounded-lg flex items-center justify-between group">
+<div class="flex items-center gap-3">
+<div class="p-3 bg-surface-container-lowest rounded-full text-secondary">
+<span class="material-symbols-outlined" data-icon="kitchen">kitchen</span>
+</div>
+<div>
+<div class="font-bold text-sm">Smart Gadget for Mom</div>
+<div class="text-xs text-on-surface-variant">₹5000 • Birthday • Mar 10</div>
+</div>
+</div>
+<button class="bg-primary text-white text-xs font-bold px-4 py-2 rounded-full active:scale-95 transition-transform flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="refresh">refresh</span> Re-run
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-[2.5rem] bg-[#fcf8ff]/60 backdrop-blur-xl shadow-[0_-8px_32px_-4px_rgba(28,27,32,0.06)]">
+<div class="flex justify-around items-center h-20 px-4 pb-2 w-full">
+<a class="flex flex-col items-center justify-center text-[#7C3AED] bg-[#7C3AED]/10 rounded-full px-4 py-1 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold uppercase tracking-wider">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#1c1b20]/60 hover:text-[#7C3AED] transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold uppercase tracking-wider">Discover</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#1c1b20]/60 hover:text-[#7C3AED] transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold uppercase tracking-wider">Cart</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#1c1b20]/60 hover:text-[#7C3AED] transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold uppercase tracking-wider">Wishlist</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#1c1b20]/60 hover:text-[#7C3AED] transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold uppercase tracking-wider">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>

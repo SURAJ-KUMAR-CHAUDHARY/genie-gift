@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GiftGenie AI - The Empathetic Curator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "on-background": "#1c1b22",
+                "primary-container": "#7c3aed",
+                "primary-fixed-dim": "#d2bbff",
+                "on-primary-fixed-variant": "#5a00c6",
+                "primary": "#630ed4",
+                "on-secondary": "#ffffff",
+                "secondary-container": "#fea619",
+                "surface": "#fcf8ff",
+                "background": "#fcf8ff",
+                "tertiary-container": "#945078",
+                "on-secondary-fixed-variant": "#653e00",
+                "on-error": "#ffffff",
+                "outline-variant": "#ccc3d8",
+                "on-primary": "#ffffff",
+                "on-surface": "#1c1b22",
+                "on-tertiary-fixed": "#3a0329",
+                "surface-variant": "#e5e1ea",
+                "inverse-primary": "#d2bbff",
+                "on-secondary-container": "#684000",
+                "tertiary-fixed": "#ffd8ea",
+                "on-primary-fixed": "#25005a",
+                "inverse-on-surface": "#f4eff9",
+                "on-secondary-fixed": "#2a1700",
+                "surface-container": "#f1ecf6",
+                "surface-bright": "#fcf8ff",
+                "surface-container-high": "#ebe6f0",
+                "on-surface-variant": "#4a4455",
+                "on-tertiary": "#ffffff",
+                "on-primary-container": "#ede0ff",
+                "tertiary": "#78395f",
+                "on-tertiary-container": "#ffdcec",
+                "error": "#ba1a1a",
+                "surface-dim": "#ddd8e2",
+                "outline": "#7b7487",
+                "surface-container-highest": "#e5e1ea",
+                "surface-container-low": "#f7f2fc",
+                "on-error-container": "#93000a",
+                "tertiary-fixed-dim": "#ffaeda",
+                "surface-tint": "#732ee4",
+                "error-container": "#ffdad6",
+                "primary-fixed": "#eaddff",
+                "secondary-fixed-dim": "#ffb95f",
+                "secondary-fixed": "#ffddb8",
+                "secondary": "#855300",
+                "on-tertiary-fixed-variant": "#6f3157",
+                "surface-container-lowest": "#ffffff",
+                "inverse-surface": "#312f37"
+              },
+              fontFamily: {
+                "headline": ["Plus Jakarta Sans"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .editorial-shadow {
+            box-shadow: 0px 20px 40px rgba(28, 27, 34, 0.06);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-background font-body antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-[#ffffff]/70 backdrop-blur-3xl">
+<div class="flex items-center justify-between px-6 py-4 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+<div class="flex items-center gap-2 font-headline font-extrabold text-xl text-primary tracking-tight">
+<span class="material-symbols-outlined" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                GiftGenie AI
+            </div>
+<div class="flex items-center gap-4">
+<a href="dashboard.html" class="relative text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</a>
+<a href="cart.html" class="relative text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="absolute -top-2 -right-2 bg-secondary text-on-secondary text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">2</span>
+</a>
+</div>
+</div>
+<div class="bg-gradient-to-b from-outline-variant/15 to-transparent h-px"></div>
+</header>
+<main class="pt-20 pb-24">
+<!-- Hero Section -->
+<section class="relative px-6 py-12 overflow-hidden">
+<div class="absolute inset-0 -z-10 bg-gradient-to-br from-surface-container-low via-surface to-surface-container-lowest"></div>
+<!-- Decorative sparkle elements -->
+<div class="absolute top-10 right-[-10%] w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="absolute bottom-0 left-[-10%] w-48 h-48 bg-secondary/5 rounded-full blur-3xl"></div>
+<div class="max-w-md mx-auto text-center space-y-8">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant text-sm font-medium">
+<span class="material-symbols-outlined text-sm" data-icon="magic_button">magic_button</span>
+                    The future of gifting is here
+                </div>
+<h1 class="font-headline font-extrabold text-[2.75rem] leading-[1.1] text-on-background tracking-tight">
+                    STOP SEARCHING.<br/>
+<span class="text-primary">START DESCRIBING.</span>
+</h1>
+<p class="text-on-surface-variant text-lg leading-relaxed px-2">
+                    Tell us about the person, their emotions, and the occasion — our AI finds the perfect gift.
+                </p>
+<div class="flex flex-col gap-4 items-center">
+<a href="discover.html" class="group w-full py-5 px-8 rounded-full bg-primary-container text-on-primary font-semibold text-lg flex items-center justify-center gap-3 shadow-xl shadow-primary/20 hover:opacity-90 active:scale-95 transition-all no-underline">
+                        Find the Perfect Gift
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Glassmorphism Hero Graphic -->
+<div class="relative mt-12 px-4">
+<div class="glass-card rounded-xl p-6 border border-white/40 editorial-shadow">
+<img alt="Luxury gift box" class="w-full h-48 object-cover rounded-DEFAULT mb-4" data-alt="Premium minimalist white gift box with a deep violet silk ribbon on a soft lavender background with ethereal lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPAo8BCNTqT1aqQmPw8xrgKIlvXFgGdnYm4oxVm3El6aF1KlVvdqL7OE22lortZREi4rrYWFwYzKVs0YNrzLyl87RW_OHZqMQNGIWSovr4nJBJ9BuxdRFe1uJNW1GGk8eBm11iNfnnLzm20jHcGEYUZe-WbKMd6W9wUacdNd4kK3tYCEfDwUGwNvpZT8fD84otBcMeZ6Knnhp1dP6glzpqPApuJumqcpXYuoz2sTXxVikV5XUQRqQi3ZMLTatV6TjfC3lvQY1elnM"/>
+<div class="flex items-center justify-between">
+<div class="text-left">
+<p class="text-xs font-medium text-primary">AI RECOMMENDED</p>
+<p class="font-bold text-on-surface">Ethereal Silk Scarf</p>
+</div>
+<div class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold">
+                                98% Match
+                            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- How It Works -->
+<section class="px-6 py-12 space-y-8">
+<div class="space-y-2">
+<h2 class="font-headline font-bold text-2xl text-on-background">How It Works</h2>
+<div class="w-12 h-1 bg-secondary rounded-full"></div>
+</div>
+<div class="space-y-4">
+<!-- Step 1 -->
+<div class="flex items-center gap-6 p-6 bg-surface-container-lowest rounded-lg editorial-shadow">
+<div class="flex-shrink-0 w-14 h-14 rounded-full bg-primary/5 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl" data-icon="chat_bubble">chat_bubble</span>
+</div>
+<div>
+<h3 class="font-bold text-on-surface">Step 1: Describe</h3>
+<p class="text-on-surface-variant text-sm">Tell us about the person and occasion</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex items-center gap-6 p-6 bg-surface-container-lowest rounded-lg editorial-shadow">
+<div class="flex-shrink-0 w-14 h-14 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-3xl" data-icon="smart_toy">smart_toy</span>
+</div>
+<div>
+<h3 class="font-bold text-on-surface">Step 2: AI Magic</h3>
+<p class="text-on-surface-variant text-sm">Our AI curates perfect suggestions</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex items-center gap-6 p-6 bg-surface-container-lowest rounded-lg editorial-shadow">
+<div class="flex-shrink-0 w-14 h-14 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined text-3xl" data-icon="redeem">redeem</span>
+</div>
+<div>
+<h3 class="font-bold text-on-surface">Step 3: Gift!</h3>
+<p class="text-on-surface-variant text-sm">Choose, customize, and send</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Trending Gifts -->
+<section class="py-12 bg-surface-container-low">
+<div class="px-6 flex items-center justify-between mb-8">
+<h2 class="font-headline font-bold text-2xl text-on-background">Trending Gifts 🔥</h2>
+<a class="text-primary font-semibold text-sm flex items-center gap-1" href="#">
+                    View all
+                    <span class="material-symbols-outlined text-xs" data-icon="arrow_forward_ios">arrow_forward_ios</span>
+</a>
+</div>
+<div class="flex overflow-x-auto gap-6 px-6 no-scrollbar pb-4">
+<!-- Product 1 -->
+<div class="flex-shrink-0 w-64 bg-surface-container-lowest rounded-lg overflow-hidden editorial-shadow group relative">
+<button class="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-error hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-xl" data-icon="favorite">favorite</span>
+</button>
+<img alt="Minimalist Watch" class="w-full h-48 object-cover" data-alt="A clean minimalist designer wristwatch with a tan leather strap on a white background with soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq9spR5-Inuou4rwRpxCs5jOQ1Q-j2XXtABr05w7G4eB8qSTwtPCof_QI21bXydt5QzeGvs6cUO_e7gN98RGmXYEpm1C2-tEEc34wmZQjc0g_nytfc2RMy_MucEtqoPhG6sH7VSmT_8kIY_4G92ZdYfZIaxXbDD7Ic36Wx9gOnJKJdMBdg5aLmLIaZPTe7KPSMP4r_vInU9rY0CoNPBD-WXtWB0zBoMP9k4iNTkZreHhY_3O0LX2kR8Po9wdOlCxKs9mJ2NGWvg_0"/>
+<div class="p-5 space-y-2">
+<h3 class="font-bold text-on-surface truncate">The Horizon Watch</h3>
+<p class="text-on-surface-variant text-xs line-clamp-2">Timeless design for someone who values precision and style.</p>
+<div class="flex items-center justify-between pt-2">
+<span class="text-primary font-bold text-lg">₹1,299</span>
+<button class="px-4 py-1.5 rounded-full bg-primary-container text-on-primary text-xs font-bold hover:bg-primary transition-colors">
+                                Add to cart
+                            </button>
+</div>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="flex-shrink-0 w-64 bg-surface-container-lowest rounded-lg overflow-hidden editorial-shadow group relative">
+<button class="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-xl" data-icon="favorite">favorite</span>
+</button>
+<img alt="Artisanal Candle" class="w-full h-48 object-cover" data-alt="A textured ceramic candle in a sage green glaze with a burning wooden wick in a cozy home setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDQN8g-WXLhvtEuRYwP-XwDP2cBklik3UMoD5FG5QwJD-QQN4k-tIqcA4aUqJyM7eNjZlNtBykfI22h9Mo3-hKjFIYXiLXY7HHtPXV9T-6tAmiqKcXCUvkFyX9QudeVPUsociR0yxsU6RGM7Jh0W_3jMUwbWJ0JMXV70djdMjSTIXyyveaCxymqlfVSChLeYeuE8lde2bPfhKaYm_G-lO_JI_SRJOgZItTZCKuVSnuwqemjYHLo7ntsc1Eb_FdSdmUxMJAZgGtKDk"/>
+<div class="p-5 space-y-2">
+<h3 class="font-bold text-on-surface truncate">Zen Ceramic Candle</h3>
+<p class="text-on-surface-variant text-xs line-clamp-2">Hand-poured soy wax with notes of sandalwood and sea salt.</p>
+<div class="flex items-center justify-between pt-2">
+<span class="text-primary font-bold text-lg">₹849</span>
+<button class="px-4 py-1.5 rounded-full bg-primary-container text-on-primary text-xs font-bold hover:bg-primary transition-colors">
+                                Add to cart
+                            </button>
+</div>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="flex-shrink-0 w-64 bg-surface-container-lowest rounded-lg overflow-hidden editorial-shadow group relative">
+<button class="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-xl" data-icon="favorite">favorite</span>
+</button>
+<img alt="Premium Coffee Set" class="w-full h-48 object-cover" data-alt="A curated set of three premium roasted coffee bags in elegant black and gold packaging" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdQzM5R-3Py_iCJAZXW9bRHXmymS8_G3q0pfVW8T3d1gIYF-ZKh1B29QLTNSiRVlV6msv2qWS911BNPU8TMgiNQP_cpaqlez49RV7J5V3djx4THmuGbZoVDfjotyDuaSxNjdwJPVPYysSwgeTIfnGlHOq-yTzCijcyToKRHfGyC8mqRisP37ngQDYrVWtOmtVu08IcSqbOAzS_SwpFnSLarSoaxU-ZLxtBNqdTwe1_6cwrHHA8jDFiso985kqNoGHFlTbR5Dcomq0"/>
+<div class="p-5 space-y-2">
+<h3 class="font-bold text-on-surface truncate">Artisan Roast Flight</h3>
+<p class="text-on-surface-variant text-xs line-clamp-2">Three distinct single-origin beans for the ultimate brew.</p>
+<div class="flex items-center justify-between pt-2">
+<span class="text-primary font-bold text-lg">₹2,499</span>
+<button class="px-4 py-1.5 rounded-full bg-primary-container text-on-primary text-xs font-bold hover:bg-primary transition-colors">
+                                Add to cart
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Emotion Categories -->
+<section class="px-6 py-12">
+<h2 class="font-headline font-bold text-2xl text-on-background mb-8">Shop by Emotion ❤️</h2>
+<div class="grid grid-cols-2 gap-4">
+<a href="discover.html" class="bg-[#ffe8e8] text-[#a13333] px-4 py-5 rounded-lg flex flex-col items-center gap-2 hover:scale-[1.02] transition-transform cursor-pointer no-underline">
+<span class="text-2xl">❤️</span>
+<span class="font-bold">Love</span>
+</a>
+<a href="discover.html" class="bg-[#fff7e0] text-[#855300] px-4 py-5 rounded-lg flex flex-col items-center gap-2 hover:scale-[1.02] transition-transform cursor-pointer no-underline">
+<span class="text-2xl">🎉</span>
+<span class="font-bold">Joy</span>
+</a>
+<a href="discover.html" class="bg-[#e8f5e9] text-[#2e7d32] px-4 py-5 rounded-lg flex flex-col items-center gap-2 hover:scale-[1.02] transition-transform cursor-pointer no-underline">
+<span class="text-2xl">🙏</span>
+<span class="font-bold">Gratitude</span>
+</a>
+<a href="discover.html" class="bg-[#ede7f6] text-[#512da8] px-4 py-5 rounded-lg flex flex-col items-center gap-2 hover:scale-[1.02] transition-transform cursor-pointer no-underline">
+<span class="text-2xl">😮</span>
+<span class="font-bold">Surprise</span>
+</a>
+<a href="discover.html" class="bg-[#e3f2fd] text-[#1565c0] px-4 py-5 rounded-lg flex flex-col items-center gap-2 hover:scale-[1.02] transition-transform cursor-pointer no-underline">
+<span class="text-2xl">🤗</span>
+<span class="font-bold">Comfort</span>
+</a>
+<a href="discover.html" class="bg-[#fce4ec] text-[#c2185b] px-4 py-5 rounded-lg flex flex-col items-center gap-2 hover:scale-[1.02] transition-transform cursor-pointer no-underline">
+<span class="text-2xl">🎨</span>
+<span class="font-bold">Creative</span>
+</a>
+</div>
+</section>
+<!-- Testimonial Card -->
+<section class="px-6 py-12">
+<div class="glass-card p-8 rounded-xl border border-white/60 editorial-shadow text-center space-y-6 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-primary opacity-30"></div>
+<span class="material-symbols-outlined text-primary/40 text-4xl" data-icon="format_quote">format_quote</span>
+<p class="text-xl italic font-medium leading-relaxed text-on-surface">
+                    "The AI picked the perfect anniversary gift for my wife! She loved it."
+                </p>
+<div class="flex flex-col items-center gap-2">
+<img alt="Priya S." class="w-12 h-12 rounded-full object-cover border-2 border-primary/20" data-alt="Close-up portrait of a young woman with a warm friendly smile and professional attire, soft background blur" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAliZqsOVpBwuFVvS320fQNZBY1ygQ1KGWZU8pm8-OSNN4E-XXlpKAjkBlmf7CodomOKntkt4HOyz9InQborENEfn_v4Op4J3ZiX_nUHuun4zSjeJEBBmgQMJOAtwfYIxqA_ENvdNsk7ZUOdveZXCPqsyK8OqKuUStyQmkMwPq-L4vjQ9bG-PB0ecWGY6-DWfYjyNC7O6ygWnaMfCIKN6azl6vIgTVuvFDtIjgk0rRx03WywS2kBHEH_34mU-0Q5FnA5Z0BjOY1wA"/>
+<div class="text-sm font-bold text-on-surface">— Priya S.</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest px-6 pt-12 pb-28">
+<div class="max-w-md mx-auto space-y-10">
+<a href="discover.html" class="w-full py-5 rounded-full bg-[#1A1A2E] text-white font-bold text-lg flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 transition-all no-underline">
+                Shop now
+                <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+<div class="grid grid-cols-2 gap-y-4 text-sm font-medium">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Help</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Terms</a>
+</div>
+<div class="flex flex-col items-center gap-6">
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-on-surface/5 flex items-center justify-center text-on-surface-variant hover:text-primary transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-on-surface/5 flex items-center justify-center text-on-surface-variant hover:text-primary transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="language">language</span>
+</div>
+</div>
+<p class="text-[10px] text-on-surface-variant/60 font-medium tracking-widest uppercase">
+                    Copyright © 2026 GiftGenie AI
+                </p>
+</div>
+</div>
+</footer>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-[#ffffff]/70 backdrop-blur-2xl border-t border-[#ccc3d8]/15 z-50 rounded-t-[3rem] shadow-[0px_-10px_40px_rgba(28,27,34,0.06)]">
+<a class="flex flex-col items-center justify-center bg-[#7c3aed]/10 text-[#630ed4] rounded-full px-4 py-2 active:scale-90 transition-all duration-300" href="index.html">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Inter'] text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4a4455] px-4 py-2 hover:bg-[#f7f2fc] rounded-full active:scale-90 transition-all duration-300" href="discover.html">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-['Inter'] text-[10px] font-medium">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4a4455] px-4 py-2 hover:bg-[#f7f2fc] rounded-full active:scale-90 transition-all duration-300" href="discover.html">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-['Inter'] text-[10px] font-medium">Genie</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4a4455] px-4 py-2 hover:bg-[#f7f2fc] rounded-full active:scale-90 transition-all duration-300" href="dashboard.html">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-['Inter'] text-[10px] font-medium">Orders</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4a4455] px-4 py-2 hover:bg-[#f7f2fc] rounded-full active:scale-90 transition-all duration-300" href="login.html">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Inter'] text-[10px] font-medium">Profile</span>
+</a>
+</nav>
+</body></html>

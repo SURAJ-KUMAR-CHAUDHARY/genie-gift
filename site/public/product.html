@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-bright": "#fcf8ff",
+                        "secondary-fixed-dim": "#ffb95e",
+                        "tertiary": "#624655",
+                        "tertiary-fixed-dim": "#e2bcce",
+                        "outline": "#7b7487",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e5e1e8",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f6f2f9",
+                        "on-secondary-fixed": "#2a1700",
+                        "inverse-primary": "#d2bbff",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#25005a",
+                        "background": "#fcf8ff",
+                        "on-primary-fixed-variant": "#5a00c6",
+                        "on-tertiary-container": "#ffdcec",
+                        "on-primary-container": "#ede0ff",
+                        "secondary": "#855400",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#ffd8ea",
+                        "surface-variant": "#e5e1e8",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#eae7ee",
+                        "secondary-fixed": "#ffddb7",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#ccc3d8",
+                        "surface-container": "#f0ecf3",
+                        "inverse-on-surface": "#f3eff6",
+                        "on-background": "#1c1b20",
+                        "secondary-container": "#fea619",
+                        "surface-dim": "#dcd9df",
+                        "on-surface": "#1c1b20",
+                        "primary": "#630ed4",
+                        "surface-tint": "#732ee4",
+                        "on-secondary-container": "#684000",
+                        "primary-fixed-dim": "#d2bbff",
+                        "inverse-surface": "#313035",
+                        "primary-container": "#7c3aed",
+                        "primary-fixed": "#eaddff",
+                        "surface": "#fcf8ff",
+                        "on-surface-variant": "#4a4455",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "on-tertiary-fixed": "#2b1421",
+                        "tertiary-container": "#7c5e6d",
+                        "on-tertiary-fixed-variant": "#5a3f4d"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-transition {
+            background: linear-gradient(to bottom, rgba(252, 248, 255, 0.9), rgba(252, 248, 255, 0.7));
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-fixed">
+<!-- Top Navigation Shell -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(28,27,32,0.04)] flex items-center justify-between px-6 h-16 w-full">
+<div class="flex items-center gap-2 text-violet-600 dark:text-violet-400 hover:opacity-80 transition-opacity scale-95 active:scale-90 transition-transform cursor-pointer">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</div>
+<h1 class="font-['Plus_Jakarta_Sans'] font-medium text-lg text-on-surface">Product Details</h1>
+<div class="flex items-center gap-2 text-violet-600 dark:text-violet-400 hover:opacity-80 transition-opacity scale-95 active:scale-90 transition-transform cursor-pointer">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</div>
+</header>
+<main class="pb-32 pt-0">
+<!-- Hero Gallery -->
+<section class="relative h-[397px] w-full overflow-hidden rounded-b-lg">
+<img class="w-full h-full object-cover" data-alt="high-quality close up of a handmade watercolor art journal with textured paper and leather binding on a wooden desk with soft sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_0xK2w2vEgnjusxqAgPPwO8PkpE6cSN2cXue0GifUXEFKR1RRLN8XmV8zBS8Q1sLMJ-fpVkXAnHVDXDPe9R95ZpWaBXaMBbQUcHQ3xmYonlarIB4GmwuvBjp7y-YmC0JUfIzr5MRZNQTF8TGFoQ_B9ipw7T738Mw3DY1Jhphm4cKfU9Ybrivd5NFcxYyJBzNl-QvSBUAJlocDh5A50ZBCKRGgQQTND-5gESqzCOBMs9rP6E2-U3aRkL0dTLHG64NSZXoopWN2ioQ"/>
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+<span class="w-2 h-2 rounded-full bg-white shadow-sm"></span>
+<span class="w-2 h-2 rounded-full bg-white/40 shadow-sm"></span>
+<span class="w-2 h-2 rounded-full bg-white/40 shadow-sm"></span>
+<span class="w-2 h-2 rounded-full bg-white/40 shadow-sm"></span>
+</div>
+</section>
+<div class="px-6 -mt-8 relative z-10 space-y-6">
+<!-- Main Info Card -->
+<div class="bg-surface-container-lowest p-8 rounded-lg shadow-[0_20px_40px_rgba(28,27,32,0.04)] space-y-4">
+<div class="flex justify-between items-start">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase">Art &amp; Creative</span>
+<div class="flex items-center bg-secondary-fixed px-3 py-1 rounded-full gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="text-[11px] font-bold text-on-secondary-fixed">95% AI Match</span>
+</div>
+</div>
+<h2 class="font-headline text-2xl font-bold leading-tight">Handmade Watercolor Art Journal Set</h2>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-lg" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-semibold text-sm">4.8</span>
+<span class="text-on-surface-variant text-sm font-normal">(128 reviews)</span>
+</div>
+</div>
+<div class="flex items-baseline gap-3">
+<span class="text-2xl font-extrabold text-primary">₹1,299</span>
+<span class="text-lg text-outline-variant line-through">₹1,599</span>
+</div>
+</div>
+<!-- AI Recommendation Card -->
+<div class="bg-surface-container p-8 rounded-lg space-y-3">
+<div class="flex items-center gap-2">
+<h3 class="font-headline font-semibold text-on-surface">Why GiftGenie AI Recommends This 🤖</h3>
+</div>
+<p class="text-on-surface-variant leading-relaxed">
+                    Based on Sarah's passion for <span class="text-primary font-medium">botanical illustration</span> and her commitment to <span class="text-primary font-medium">sustainable materials</span>, this set offers the perfect texture and durability for professional outdoor sketching.
+                </p>
+</div>
+<!-- Description -->
+<div class="space-y-4 px-2">
+<div class="flex justify-between items-center border-b border-outline-variant/20 pb-4">
+<h3 class="font-headline font-semibold">Features &amp; Details</h3>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="expand_more">expand_more</span>
+</div>
+<ul class="space-y-3 text-on-surface-variant">
+<li class="flex items-center gap-3">
+<span class="w-1.5 h-1.5 rounded-full bg-primary/40"></span>
+                        300gsm cold-pressed professional grade paper
+                    </li>
+<li class="flex items-center gap-3">
+<span class="w-1.5 h-1.5 rounded-full bg-primary/40"></span>
+                        Authentic handbound leather wrap closure
+                    </li>
+<li class="flex items-center gap-3">
+<span class="w-1.5 h-1.5 rounded-full bg-primary/40"></span>
+                        Includes 2 premium wooden paint brushes
+                    </li>
+</ul>
+</div>
+<!-- Personalization Card -->
+<div class="bg-surface-container-lowest p-8 rounded-lg shadow-[0_10px_30px_rgba(28,27,32,0.02)] space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="font-headline font-semibold">Add a Personal Touch ✉️</h3>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl relative">
+<p class="text-on-surface-variant italic text-sm leading-relaxed pr-8">
+                        "To Sarah, may your days be as colorful as the strokes you paint. Wishing you endless inspiration with this new journal."
+                    </p>
+<button class="absolute top-4 right-4 text-primary hover:opacity-70 transition-opacity">
+<span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+</button>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="featured_seasonal_and_gifts">featured_seasonal_and_gifts</span>
+<div>
+<p class="font-medium text-sm">Include gift wrapping 🎀</p>
+<p class="text-on-surface-variant text-[12px]">+₹99</p>
+</div>
+</div>
+<div class="w-12 h-6 bg-primary rounded-full relative flex items-center px-1">
+<div class="w-4 h-4 bg-white rounded-full shadow-sm ml-auto"></div>
+</div>
+</div>
+</div>
+<!-- Similar Products -->
+<div class="space-y-6 pt-4 pb-12">
+<h3 class="font-headline font-semibold px-2">You May Also Like</h3>
+<div class="flex gap-4 overflow-x-auto no-scrollbar pb-4 -mx-2 px-2">
+<!-- Similar Item 1 -->
+<div class="min-w-[180px] bg-surface-container-lowest rounded-lg p-3 space-y-3">
+<img class="w-full h-32 object-cover rounded" data-alt="professional artist paint brush set arranged on a minimalist white surface with soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcX_anBdTT37FBDHkDGc_6a2bwZGOyJGcSweuC6qmRXk65H-Sw4OsjwvTgLnf2u4ZXWGOVtukbEU7wQ4T4L_rN44qqd6RoFWF5PNIu9IXK9n4jDW4KV-3rf5luToGJo0kYeSJxVgOPrjdoj8pWgLD8ouZjJPwFIjFNeZXfK48DV-y4POhJ0pHIXiiyRHOHbobdXEHzGtvdz0rifbJulRRL_XUU-RGi90TKDFPAxbuO9X_8Hl3yb134HhCfHXevn-Z2GketBcPYKr4"/>
+<div class="space-y-1">
+<h4 class="font-bold text-sm truncate">Artist Brush Set</h4>
+<p class="text-primary font-bold text-sm">₹699</p>
+</div>
+<button class="w-full py-2 bg-surface-container text-on-surface text-[12px] font-bold rounded-full hover:brightness-105 transition-all active:scale-95">
+                            ADD
+                        </button>
+</div>
+<!-- Similar Item 2 -->
+<div class="min-w-[180px] bg-surface-container-lowest rounded-lg p-3 space-y-3">
+<img class="w-full h-32 object-cover rounded" data-alt="ceramic paint palette with wells for mixing watercolors on a clean aesthetic background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgL8yNFO67JwzFix_rTP5lPka2cQStKiv2Bt90-3BFz15QPEhmCkPvK_HR3MEznTQg6SbSVnck86H1Tda48X3rKpnvihsQtGHQMbh_c0UO7ulO-3r3sMFEf8GJZGjQ4SgDQt7uNGReGY027rtHvkN5kmfanqJd2zA47to5X69QUq750JgtxxrxFSMYy0Tiwv_Jp9K01zZEzHXwyQHq4-l9hBIbPj4g31Qzd01XbcEkBwKhh1OvR3-0uP28-0xtkZyC6DmUOsmAsKk"/>
+<div class="space-y-1">
+<h4 class="font-bold text-sm truncate">Ceramic Palette</h4>
+<p class="text-primary font-bold text-sm">₹849</p>
+</div>
+<button class="w-full py-2 bg-surface-container text-on-surface text-[12px] font-bold rounded-full hover:brightness-105 transition-all active:scale-95">
+                            ADD
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Sticky Bottom Bar Shell -->
+<nav class="fixed bottom-0 left-0 w-full p-6 flex items-center gap-4 bg-white dark:bg-slate-900 border-none rounded-t-lg z-50 shadow-[0_-10px_30px_rgba(124,58,237,0.06)]">
+<!-- Quantity Selector -->
+<div class="flex items-center justify-center bg-slate-100 dark:bg-slate-800 rounded-full px-4 py-4 text-slate-900 dark:text-slate-100 hover:brightness-110 transition-all active:scale-[0.98] duration-300">
+<span class="material-symbols-outlined text-[20px] cursor-pointer" data-icon="remove_selection">remove</span>
+<span class="mx-4 font-['Inter'] font-semibold text-sm">1</span>
+<span class="material-symbols-outlined text-[20px] cursor-pointer" data-icon="add">add</span>
+</div>
+<!-- Primary CTA -->
+<button class="grow bg-gradient-to-br from-violet-500 to-violet-700 text-white rounded-full px-8 py-4 flex items-center justify-center shadow-lg font-['Inter'] font-semibold text-sm hover:brightness-110 transition-all active:scale-[0.98] duration-300 cubic-bezier(0.4,0,0.2,1) gap-2">
+<span class="material-symbols-outlined text-[20px]" data-icon="shopping_bag">shopping_bag</span>
+            Add to Cart — ₹1,299
+        </button>
+</nav>
+</body></html>
